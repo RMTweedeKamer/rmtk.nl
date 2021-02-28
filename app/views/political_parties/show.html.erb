@@ -1,0 +1,27 @@
+<p id="notice"></p>
+
+<p>
+  <strong>Name:</strong><%= @political_party.name %>
+</p>
+
+<p>
+  <strong>Short name:</strong><%= @political_party.short_name %>
+</p>
+
+<p>
+  <strong>Body:</strong><%= @political_party.body %>
+</p>
+
+<p>
+  <strong>Banner:</strong>
+  <%= image_tag @political_party&.banner.url unless @political_party&.banner.blank? %>
+</p>
+
+<p>
+  <strong>Logo:</strong>
+  <%= image_tag @political_party&.logo.url unless @political_party&.logo.blank? %>
+</p>
+
+<%= link_to 'Edit', edit_political_party_path(@political_party) %>
+ |
+<%= link_to 'Back', political_parties_path %>

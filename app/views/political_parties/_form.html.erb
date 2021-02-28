@@ -1,0 +1,45 @@
+<%= form_for @political_party do |f| %>
+	<% if @political_party.errors.any? %>
+		<div>
+			<h2>
+				<%= pluralize(@political_party.errors.count, "error") %> prohibited this political_party from being saved
+			</h2>
+		  <ul>
+		    <% @political_party.errors.full_messages.each do |message| %>
+		    	<li><%= message %></li>
+		  	<% end %>
+		  </ul>
+		</div>
+	<% end %>
+
+	<div class="field">
+	  <%= f.label :name %>
+	  <%= f.text_field :name %>
+	</div>
+
+	<div class="field">
+		<%= f.label :short_name %>
+	  <%= f.text_field :short_name %>
+	</div>
+	<div class="field">
+	  <%= f.label :body %>
+	  <%= f.text_area :body %>
+	</div>
+	<div class="field">
+		<%= f.hidden_field :banner, value: @political_party.cached_banner_data %>
+	</div>
+	<div class="field">
+		<%= f.label :banner %>
+		<%= f.file_field :banner %>
+	</div>
+	<div class="field">
+		<%= f.hidden_field :logo, value: @political_party.cached_logo_data %>
+	</div>
+	<div class="field">
+		<%= f.label :logo %>
+		<%= f.file_field :logo %>
+	</div>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %>

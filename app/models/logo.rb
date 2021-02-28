@@ -1,0 +1,3 @@
+class Logo < Photo
+end
+

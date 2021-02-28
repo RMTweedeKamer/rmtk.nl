@@ -1,0 +1,29 @@
+<h1>Listing political_parties</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Short name</th>
+      <th>Body</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+		<% @political_parties.each do |political_party| %>
+    <tr>
+      <td><%= political_party.name %></td>
+      <td><%= political_party.short_name %></td>
+      <td><%= political_party.body %></td>
+      <td><%= link_to 'Show', political_party %></td>
+      <td><%= link_to 'Edit', edit_political_party_path(political_party) %></td>
+      <td><%= link_to 'Destroy', political_party, data: { confirm: 'Are you sure?' }, method: :delete %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<br />
+
+<%= link_to 'New Political party', new_political_party_path %>
