@@ -4,8 +4,10 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Short name</th>
+      <th>Abbreviation</th>
       <th>Body</th>
+      <th>Active</th>
+      <th>Party token</th>
       <th></th>
       <th></th>
       <th></th>
@@ -15,8 +17,10 @@
 		<% @political_parties.each do |political_party| %>
     <tr>
       <td><%= political_party.name %></td>
-      <td><%= political_party.short_name %></td>
+      <td><%= political_party.abbreviation %></td>
       <td><%= political_party.body %></td>
+      <td><%= political_party.active %></td>
+      <td><%= political_party.party_token %></td>
       <td><%= link_to 'Show', political_party %></td>
       <td><%= link_to 'Edit', edit_political_party_path(political_party) %></td>
       <td><%= link_to 'Destroy', political_party, data: { confirm: 'Are you sure?' }, method: :delete %></td>

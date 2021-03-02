@@ -9,5 +9,8 @@ class User
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
   field :username, type: String
+
+  field :party_token, type: String
+
   validates :username, uniqueness: true
 end

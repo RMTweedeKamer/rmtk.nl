@@ -5,7 +5,7 @@
 </p>
 
 <p>
-  <strong>Short name:</strong><%= @political_party.short_name %>
+  <strong>Abbreviation:</strong><%= @political_party.abbreviation %>
 </p>
 
 <p>
@@ -21,6 +21,19 @@
   <strong>Logo:</strong>
   <%= image_tag @political_party&.logo.url unless @political_party&.logo.blank? %>
 </p>
+
+<p>
+  <strong>Party token:</strong><%= @political_party.party_token %>
+</p>
+
+<p>
+  <strong>Active:</strong><%= @political_party.active %>
+</p>
+
+<p>
+  <strong>Election programme:</strong><a href="<%= @political_party&.election_programme.url unless @political_party&.election_programme.blank? %>" > <%= @political_party&.election_programme&.original_filename %> </a>
+</p>
+
 
 <%= link_to 'Edit', edit_political_party_path(@political_party) %>
  |

@@ -18,8 +18,8 @@
 	</div>
 
 	<div class="field">
-		<%= f.label :short_name %>
-	  <%= f.text_field :short_name %>
+		<%= f.label :abbreviation %>
+	  <%= f.text_field :abbreviation %>
 	</div>
 	<div class="field">
 	  <%= f.label :body %>
@@ -38,6 +38,13 @@
 	<div class="field">
 		<%= f.label :logo %>
 		<%= f.file_field :logo %>
+	</div>
+	<div class="field">
+		<%= f.hidden_field :election_programme, value: @political_party.election_programme_data %>
+	</div>
+	<div class="field">
+		<%= f.label :election_programme %>
+		<%= f.file_field :election_programme %>
 	</div>
 	<div class="actions">
 		<%= f.submit %>
