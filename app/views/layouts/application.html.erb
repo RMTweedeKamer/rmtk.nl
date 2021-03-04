@@ -24,52 +24,26 @@
     <%= content_for?(:head) ? yield(:head) : '' %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		  <div class="container-fluid">
-		    <a class="navbar-brand" href="/">RMTK</a>
-		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-		      <span class="navbar-toggler-icon"></span>
-		    </button>
-		    <div class="collapse navbar-collapse" id="navbarNav">
-		      <ul class="navbar-nav">
-		        <li class="nav-item">
-		          <a class="nav-link active" aria-current="page" href="/political_parties">Politieke Partijen</a>
-		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link active" href="<%= page_path('contact') %>">Contact</a>
-		        </li>
-		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Stemwijzer</a>
-		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Wiki</a>
-		        </li>
-		      </ul>
-		    </div>
-		    <span class="navbar-text">
-          <% if current_user %>
-            <%= link_to "Uitloggen", :logout, method: :post %>
-          <% else %>
-            <%= link_to "Registreren", new_user_path %>
-            /
-            <%= link_to "Inloggen", :login %>
-          <% end %>
-        </span>
-		  </div>
-		</nav>
+    <div id="page-container">
+      <div id="content-wrap">
 
-		<%= render 'shared/flash' %>
+        <div id="navbar"></div>
 
-    <div>
-    	<%= yield %>
+        <%= render 'shared/flash' %>
+
+        <div id="root">
+        	<%= yield %>
+        </div>
+
+        <footer id="footer"></footer>
+      </div>
     </div>
-
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
 
