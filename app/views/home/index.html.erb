@@ -1,0 +1,8 @@
+<%= react_component("hello") %>
+          <% if current_user %>
+            <%= link_to "Uitloggen", :logout, method: :post %>
+          <% else %>
+            <%= link_to "Registreren", new_user_path %>
+            /
+            <%= link_to "Inloggen", :login %>
+          <% end %>

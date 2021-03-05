@@ -8,6 +8,7 @@ import {
     Text,
     useColorModeValue,
     VisuallyHidden,
+    ChakraProvider
 } from '@chakra-ui/react';
 
 import { FaInstagram, FaTwitter, FaReddit } from 'react-icons/fa';
@@ -63,7 +64,8 @@ const SocialButton = ({
 
 export default function SmallWithLogoLeft() {
     return (
-        <Box
+      <ChakraProvider>
+        <Box id="footer"
             bg={useColorModeValue('gray.50', 'gray.900')}
             color={useColorModeValue('gray.700', 'gray.200')}>
             <Container
@@ -89,5 +91,6 @@ export default function SmallWithLogoLeft() {
                 </Stack>
             </Container>
         </Box>
+      </ChakraProvider>
     );
 }

@@ -55,7 +55,6 @@ gem 'sidekiq', '~> 5'
 gem 'bcrypt'
 gem "high_voltage", "~> 3.1"
 gem "fastimage", "~> 2.2"
-
 gem "loofah", ">= 2.3.1"
 
-
+gem 'react-rails'

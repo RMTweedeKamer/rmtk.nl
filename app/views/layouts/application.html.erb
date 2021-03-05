@@ -25,14 +25,15 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-  <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <div id="page-container">
       <div id="content-wrap">
 
-        <div id="navbar"></div>
+        <%= react_component("navbar") %>
 
         <%= render 'shared/flash' %>
 
@@ -40,10 +41,9 @@
         	<%= yield %>
         </div>
 
-        <footer id="footer"></footer>
+        <%= react_component("footer") %>
       </div>
     </div>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
 
