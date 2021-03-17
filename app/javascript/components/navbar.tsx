@@ -1,4 +1,6 @@
 import * as React from "react";
+import PropTypes from "prop-types";
+
 import {
   Box,
   Flex,
@@ -26,8 +28,10 @@ import {
 } from '@chakra-ui/icons';
 
 import ErrorBoundary from "../components/error_boundary";
+import RegLogUs from "./nav_login";
 
-export default function WithSubnavigation() {
+type AppProps = { isLoggedIn: string };
+const WithSubnavigation = ({ isLoggedIn }: AppProps) => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -70,34 +74,7 @@ export default function WithSubnavigation() {
                 <DesktopNav />
               </Flex>
             </Flex>
-
-            <Stack
-              flex={{ base: 1, md: 0 }}
-              justify={'flex-end'}
-              direction={'row'}
-              spacing={6}>
-              <Button
-                as={'a'}
-                fontSize={'sm'}
-                fontWeight={400}
-                variant={'link'}
-                href={'/login'}>
-                Inloggen
-          </Button>
-              <Button
-                href={'/signup'}
-                as={'a'}
-                display={{ base: 'none', md: 'inline-flex' }}
-                fontSize={'sm'}
-                fontWeight={600}
-                color={'white'}
-                bg={'blue.400'}
-                _hover={{
-                  bg: 'blue.300',
-                }}>
-                Registreren
-          </Button>
-            </Stack>
+            <RegLogUs isLoggedIn={isLoggedIn} />
           </Flex>
 
           <Collapse in={isOpen} animateOpacity>
@@ -108,6 +85,7 @@ export default function WithSubnavigation() {
     </ErrorBoundary>
   );
 }
+
 
 const DesktopNav = () => {
   return (
@@ -283,3 +261,4 @@ const NAV_ITEMS: Array<NavItem> = [
   },
 ];
 
+export default WithSubnavigation;

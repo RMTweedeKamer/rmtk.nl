@@ -28,15 +28,17 @@ export default function SimpleCard() {
             <Heading fontSize={'4xl'}>Log in op uw account</Heading>
           </Stack>
           <Box rounded={'lg'} bg={'white'} boxShadow={'lg'} p={8}>
+            <form action="/user_sessions" acceptCharset="UTF-8" data-remote="true" method="post">
             <Stack spacing={4}>
               <FormControl id="username" isRequired>
                 <FormLabel>Gebruikersnaam</FormLabel>
-                <Input type="username" />
+                <Input name="username" type="username" />
               </FormControl>
               <FormControl id="password" isRequired>
                 <FormLabel>Wachtwoord</FormLabel>
                 <InputGroup size="md">
                   <Input
+                    name="password"
                     pr="4.5rem"
                     type={show ? "text" : "password"}
                     placeholder="Enter password"
@@ -50,8 +52,8 @@ export default function SimpleCard() {
               </FormControl>
               <Stack spacing={10}>
                 <br />
-                <Button
-                  formMethod="post"
+                <Input
+                  as={'button'}
                   type="submit"
                   bg={'blue.400'}
                   color={'white'}
@@ -59,9 +61,10 @@ export default function SimpleCard() {
                     bg: 'blue.500',
                   }}>
                   Aanmelden
-              </Button>
+              </Input>
               </Stack>
             </Stack>
+            </form>
           </Box>
         </Stack>
       </Flex>
