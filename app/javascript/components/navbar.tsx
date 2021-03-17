@@ -244,18 +244,22 @@ const NAV_ITEMS: Array<NavItem> = [
     href: '#'
   },
   {
+    label: 'Kamerstuk Indienen',
+    href: 'https://indienen.rmtk.nl'
+  },
+  {
     label: 'Wiki',
     href: '#',
     children: [
       {
-        label: '',
+        label: 'Archief',
         subLabel: '',
         href: '#',
       },
       {
-        label: 'Archief',
-        subLabel: 'An exclusive list for contract work',
-        href: '#',
+        label: 'Oude Wiki',
+        subLabel: 'De oude wiki op reddit',
+        href: 'https://www.reddit.com/r/RMTK/wiki/',
       },
     ],
   },

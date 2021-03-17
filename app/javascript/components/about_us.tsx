@@ -5,7 +5,15 @@ import {
   IoLogoDiscord,
   IoLogoReddit,
   IoGlobeOutline,
+  IoLogoTwitter,
+  IoLogoInstagram
 } from 'react-icons/io5';
+
+import {
+  BiSpreadsheet,
+  BiMailSend,
+} from 'react-icons/bi';
+
 
 import { ReactNode, ReactElement } from 'react';
 import {
@@ -60,9 +68,9 @@ export default function StatsGridWithImage() {
           <Flex />
         </Stack>
         <Container
-          maxW={'5xl'} py={12}>
+          maxW={'5xl'} py={120}>
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-            <Stack spacing={4}>
+            <Stack spacing={4} >
               <Heading color={"white"}>Onze platformen</Heading>
               <Text color={'gray.400'} fontSize={'xl'}>
                       Deze website is niet ons voornaamste platform, dus we rade                                zeerste aan eventuele vragen direct aan het moderatieteam te stellen,
@@ -99,46 +107,51 @@ export default function StatsGridWithImage() {
         </Container>
       </Container>
     </Box>
-    <Container maxW={'5xl'} zIndex={10} position={'relative'}>
+    <Container
+    py={100}
+    maxW={'5xl'} zIndex={10}>
       <Box p={4}>
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
           <SecondFeature
-            icon={<Icon as={IoGlobeOutline} w={10} h={10} />}
+            icon={<Icon as={IoLogoTwitter} w={10} h={10} />}
             title={'RMTK Twitter'}
             link={'https://twitter.com/RMTKamer'}
-            text={''} />
+            text={'Volg ons op Twitter'} />
           <SecondFeature
-            icon={<Icon as={IoGlobeOutline} w={10} h={10} />}
+            icon={<Icon as={IoLogoInstagram} w={10} h={10} />}
             title={'RMTK Instagram'}
             link={'https://www.instagram.com/rmtkamer/'}
-            text={''} />
+            text={'Volg ons op Instagram'} />
           <SecondFeature
-            icon={<Icon as={IoGlobeOutline} w={10} h={10} />}
+            icon={<Icon as={BiMailSend} w={10} h={10} />}
             title={'Email'}
-            link={''}
+            link={'mailto:rmtweedekamer@gmail.com'}
             text={'Voor direct contact kan gemaild worden naar rmtweedekamer@gmail.com'} />
           <SecondFeature
-            icon={<Icon as={IoGlobeOutline} w={10} h={10} />}
-            title={'Nieuwe ledengids'}
+            icon={<Icon as={IoLogoReddit} w={10} h={10} />}
+            title={'Nieuwe Ledengids'}
             link={'https://www.reddit.com/r/RMTK/wiki/gids'}
-            text={''} />
+            text={'De Officiële RMTK Gids. In deze gids proberen wij de belangrijkste concepten van RMTK aan jou uit te leggen.'} />
           <SecondFeature
-            icon={<Icon as={IoGlobeOutline} w={10} h={10} />}
+            icon={<Icon as={BiSpreadsheet} w={10} h={10} />}
             title={'Masterspreadsheet'}
             link={'https://docs.google.com/spreadsheets/d/1ld92uaKfVgENCafId8HjWIWJ6HXc_Dl1lgz960pu-iI/edit?usp=sharing'}
-            text={''} />
+            text={'De spreadsheet vol met alle actuele informatie over RMTK'} />
           <SecondFeature
-            icon={<Icon as={IoGlobeOutline} w={10} h={10} />}
+            icon={<Icon as={IoLogoReddit} w={10} h={10} />}
             title={'RMTK Grondwet'}
             link={'https://www.reddit.com/r/RMTK/wiki/grondwet'}
-            text={''} />
+            text={'Grondwet van de Reddit Model Tweede Kamer'} />
           <SecondFeature
             icon={<Icon as={IoGlobeOutline} w={10} h={10} />}
             title={'RMTK Stemwijzer'}
             link={''}
-            text={''} />
+            text={'TBA'} />
 
         </SimpleGrid>
+      </Box>
+      <Box bg="" h="20vh" p={4} color="white">
+
       </Box>
       </Container></>
   );
@@ -190,13 +203,13 @@ const SecondFeature = ({ title, text, link, icon }: SecondFeatureProps) => {
         h={16}
         align={'center'}
         justify={'center'}
-        color={'white'}
+        color={'gray.500'}
         rounded={'full'}
         bg={'gray.100'}
         mb={1}>
         {icon}
       </Flex>
-      <Text fontWeight={600}>{title}</Text>
+      <Text fontWeight={600} as={'a'} href={link}>{title}</Text>
       <Text color={'gray.600'}>{text}</Text>
     </Stack>
   );
