@@ -35,13 +35,6 @@
         <%= react_component("navbar", { isLoggedIn: logged_in? }) %>
 
         <%= react_component("flash_messages", messages: flash_messages) %>
-        <%# <%= flash_messages %>
-        <% flash.each do |type, msg| %>
-          <div>
-            <%= msg %>
-          </div>
-        <% end %>
-
 
         <div id="root">
         	<%= yield %>
