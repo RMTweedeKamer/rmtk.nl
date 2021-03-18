@@ -22,7 +22,7 @@ export default function SimpleCard() {
 
   return (
     <ChakraProvider>
-      <Flex minH={'100vh'} align={'center'} justify={'center'} bg={'gray.50'}>
+      <Flex minH={'90vh'} align={'center'} justify={'center'} bg={'gray.50'}>
         <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
           <Stack align={'center'}>
             <Heading fontSize={'4xl'}>Log in op uw account</Heading>

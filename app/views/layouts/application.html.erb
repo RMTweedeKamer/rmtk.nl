@@ -34,13 +34,20 @@
       <div id="content-wrap">
         <%= react_component("navbar", { isLoggedIn: logged_in? }) %>
 
-        <%= render 'shared/flash' %>
+        <%= react_component("flash_messages", messages: flash_messages) %>
+        <%# <%= flash_messages %>
+        <% flash.each do |type, msg| %>
+          <div>
+            <%= msg %>
+          </div>
+        <% end %>
+
 
         <div id="root">
         	<%= yield %>
         </div>
 
-        <%= react_component("footer") %>
+        <%= react_component("footer", prerender: true) %>
       </div>
     </div>
   </body>
