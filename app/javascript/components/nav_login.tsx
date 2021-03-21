@@ -30,7 +30,10 @@ import {
 import ErrorBoundary from "../components/error_boundary";
 
 class RegLogUs extends React.Component<any> {
-  static propTypes: { isLoggedIn: PropTypes.Requireable<boolean>; };
+  static propTypes: {
+    isLoggedIn: PropTypes.Requireable<boolean>;
+    id: PropTypes.Requireable<string>
+   };
 
   render() {
     console.log("logged: " + this.props.isLoggedIn);
@@ -78,7 +81,7 @@ class RegLogUs extends React.Component<any> {
             fontSize={'sm'}
             fontWeight={400}
             variant={'link'}
-            href={'/users'}>
+            href={'/users/' + this.props.id }>
             Gebruiker
     </Button>
           <Button
@@ -102,7 +105,8 @@ class RegLogUs extends React.Component<any> {
 }
 
 RegLogUs.propTypes = {
-  isLoggedIn: PropTypes.bool
+  isLoggedIn: PropTypes.bool,
+  id: PropTypes.string
 };
 
 export default RegLogUs;

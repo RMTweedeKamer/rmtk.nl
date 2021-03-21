@@ -3,6 +3,7 @@ Sidekiq::Web.set :session_secret, Rails.application.secrets[:secret_key_base]
 
 
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get "/pages/*id" => 'pages#show', as: :page, format: false
 
   root to: 'home#index'

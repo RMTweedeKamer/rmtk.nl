@@ -1,0 +1,31 @@
+<p id="notice"></p>
+
+<%= form_for @user do |f| %>
+	<% if @user.errors.any? %>
+		<div>
+			<h2>
+				<%= pluralize(@user.errors.count, "error") %> prohibited this political_party from being saved
+			</h2>
+		  <ul>
+		    <% @user.errors.full_messages.each do |message| %>
+		    	<li><%= message %></li>
+		  	<% end %>
+		  </ul>
+		</div>
+	<% end %>
+
+	<div class="field">
+	  <%= f.label :username %>
+	  <%= f.text_field :username %>
+	</div>
+
+	<div class="field">
+		<%= f.label :party_token %>
+	  <%= f.text_field :party_token %>
+	</div>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %>
+
+<%= link_to 'Back', :root %>

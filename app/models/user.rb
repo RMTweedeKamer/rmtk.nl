@@ -13,4 +13,19 @@ class User
   field :party_token, type: String
 
   validates :username, uniqueness: true
+
+  def superadmin_role?
+    Rails.application.credentials.admin[:secret_token] == party_token
+  end
+
+  def secret
+    Rails.application.credentials.admin[:secret_token]
+  end
+
+  def has_party_token(token)
+    @party_token == token
+  end
+
+  def user_role
+  end
 end

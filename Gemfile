@@ -58,3 +58,6 @@ gem "fastimage", "~> 2.2"
 gem "loofah", ">= 2.3.1"
 
 gem 'react-rails'
+gem 'rails_admin', '~> 2.1.1'
+gem 'cancancan'
+gem 'cancancan-mongoid'

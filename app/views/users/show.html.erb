@@ -1,0 +1,13 @@
+<p id="notice"></p>
+
+<p>
+  <strong>Username:</strong><%= @user.username %>
+</p>
+
+<p>
+  <strong>Party token:</strong><%= @user.party_token %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %>
+ |
+<%= link_to 'Back', :root %>
