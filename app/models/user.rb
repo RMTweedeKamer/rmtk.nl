@@ -14,18 +14,11 @@ class User
 
   validates :username, uniqueness: true
 
-  def superadmin_role?
+  def admin?
     Rails.application.credentials.admin[:secret_token] == party_token
-  end
-
-  def secret
-    Rails.application.credentials.admin[:secret_token]
   end
 
   def has_party_token(token)
     @party_token == token
-  end
-
-  def user_role
   end
 end

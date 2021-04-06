@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update ]
   skip_before_action :require_login, only: [:index, :new, :create]
 
+  load_and_authorize_resource
+  # skip_authorize_resource :only => :index
 
   # GET /users or /users.json
   def index

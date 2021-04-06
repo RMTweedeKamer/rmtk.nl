@@ -1,5 +1,5 @@
-<% if current_user&.superadmin_role? %>
-	<p>Visible only for superadmins and supervisors! </p>
+<%# <% if current_user&.admin? %> %>
+	<p>Visible only for admins and supervisors! </p>
 
 
 <h1>Listing users</h1>
@@ -15,7 +15,7 @@
 			<td><%= user.username %></td>
 			<td><%= link_to 'Show', user %></td>
 			<td><%= link_to 'Edit', edit_user_path(user) %></td>
-			<%# <td><%= link_to 'Destroy', user, data: { confirm: 'Are you sure?' }, method: :delete %></td> %>
+			<%# <td><%= link_to 'Destroy', user, data: { confirm: 'Are you sure?' }, method: :delete %></td>
 		</tr>
 		<% end %>
 	</tbody>
@@ -24,4 +24,4 @@
 <br />
 <%= link_to 'New User', new_user_path %>
 
-<% end %>
+<%# <% end %> %>
