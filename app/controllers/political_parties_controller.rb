@@ -1,7 +1,8 @@
 class PoliticalPartiesController < ApplicationController
   before_action :set_political_party, only: %i[ show edit update destroy ]
-
   skip_before_action :require_login, only: [:show, :index]
+
+  load_and_authorize_resource
 
   # GET /political_parties or /political_parties.json
   def index

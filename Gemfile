@@ -59,5 +59,6 @@ gem "loofah", ">= 2.3.1"
 
 gem 'react-rails'
 gem 'rails_admin', '~> 2.1.1'
+gem 'kaminari-mongoid'
 gem 'cancancan'
 gem 'cancancan-mongoid'
