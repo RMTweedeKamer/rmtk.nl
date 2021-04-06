@@ -15,6 +15,8 @@ class Ability
         can :read, :dashboard
       else
         can [:show, :update], User, :id => user.id
+        can [:new, :create], User
+
         can :read, PoliticalParty
         can :update, PoliticalParty, :party_token => user.party_token
       end

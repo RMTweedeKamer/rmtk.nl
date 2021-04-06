@@ -30,9 +30,9 @@ import {
 import ErrorBoundary from "../components/error_boundary";
 import RegLogUs from "./nav_login";
 
-type AppProps = { isLoggedIn: string, id: string };
+type AppProps = { isLoggedIn: string, id: string, username: string };
 
-const WithSubnavigation = ({ isLoggedIn, id }: AppProps) => {
+const WithSubnavigation = ({ isLoggedIn, id, username }: AppProps) => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -75,7 +75,7 @@ const WithSubnavigation = ({ isLoggedIn, id }: AppProps) => {
                 <DesktopNav />
               </Flex>
             </Flex>
-            <RegLogUs isLoggedIn={isLoggedIn} id={id} />
+            <RegLogUs isLoggedIn={isLoggedIn} id={id} username={username} />
           </Flex>
 
           <Collapse in={isOpen} animateOpacity>

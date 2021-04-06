@@ -2,37 +2,17 @@ import * as React from "react";
 import PropTypes from "prop-types";
 
 import {
-  Box,
-  Flex,
-  Text,
-  IconButton,
   Button,
   Stack,
-  Collapse,
-  Icon,
-  Link,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  useColorModeValue,
-  useBreakpointValue,
-  useDisclosure,
-  ChakraProvider
 } from '@chakra-ui/react';
-
-import {
-  HamburgerIcon,
-  CloseIcon,
-  ChevronDownIcon,
-  ChevronRightIcon,
-} from '@chakra-ui/icons';
 
 import ErrorBoundary from "../components/error_boundary";
 
 class RegLogUs extends React.Component<any> {
   static propTypes: {
     isLoggedIn: PropTypes.Requireable<boolean>;
-    id: PropTypes.Requireable<string>
+    id: PropTypes.Requireable<string>;
+    username: PropTypes.Requireable<string>;
    };
 
   render() {
@@ -82,7 +62,7 @@ class RegLogUs extends React.Component<any> {
             fontWeight={400}
             variant={'link'}
             href={'/users/' + this.props.id }>
-            Gebruiker
+            { this.props.username }
     </Button>
           <Button
             href={'/logout'}
@@ -106,7 +86,8 @@ class RegLogUs extends React.Component<any> {
 
 RegLogUs.propTypes = {
   isLoggedIn: PropTypes.bool,
-  id: PropTypes.string
+  id: PropTypes.string,
+  username: PropTypes.string
 };
 
 export default RegLogUs;
