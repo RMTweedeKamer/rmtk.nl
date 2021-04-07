@@ -6,7 +6,7 @@ class PoliticalPartiesController < ApplicationController
 
   # GET /political_parties or /political_parties.json
   def index
-    @political_parties = PoliticalParty.all
+    @political_parties = PoliticalParty.only(:id, :name, :abbreviation, :body, :logo_data, :active).all
   end
 
   # GET /political_parties/1 or /political_parties/1.json

@@ -1,4 +1,4 @@
-<% content_for :title, @political_party.name %>
+<% content_for :title, @political_party&.name %>
 
 <p id="notice"></p>
 
@@ -36,6 +36,7 @@
   <strong>Election programme:</strong><a href="<%= @political_party&.election_programme.url unless @political_party&.election_programme.blank? %>" > <%= @political_party&.election_programme&.original_filename %> </a>
 </p>
 
+<%= react_component("political_party", { logo: @political_party&.logo&.url, name: @political_party&.name, abbreviation: @political_party&.abbreviation, body: @political_party&.body }) %>
 
 <%= link_to 'Edit', edit_political_party_path(@political_party) %>
  |

@@ -24,7 +24,7 @@ class PoliticalParty
 
   validates_uniqueness_of :party_token
 
-  before_validation do
+  before_validation on: :create do
     self.party_token = Digest::SHA1.hexdigest([Time.now, rand].join)[0..10]
     self.active = true
   end

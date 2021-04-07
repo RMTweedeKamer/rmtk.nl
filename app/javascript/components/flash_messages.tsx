@@ -8,25 +8,21 @@ import {
 
 import RailsAlert from "./rails_alert";
 
-class FlashMessages extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = { messages: props.messages };
-  }
+type AppProps = {messages: Array<Message>};
 
-  render () {
+const FlashMessages = ({messages}: AppProps) => {
+
     return(
       <div>
         <ChakraProvider>
         <Stack spacing={3}>
-        { this.state.messages.map( (message) =>
+        { messages.map( (message: Message) =>
           <RailsAlert key={ message.id } message={ message } /> ) }
         </Stack>
         </ChakraProvider>
       </div>
     );
-  }
 }
 
 // interface FlashMessagesProps {

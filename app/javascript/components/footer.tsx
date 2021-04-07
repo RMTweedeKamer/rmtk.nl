@@ -17,7 +17,6 @@ import React from 'react';
 
 var logo = require('../images/logo.jpg');
 
-
 const Logo = (props: any) => {
     return (
       <Image
