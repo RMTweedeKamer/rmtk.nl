@@ -21,16 +21,13 @@
 		<%= f.label :abbreviation %>
 	  <%= f.text_field :abbreviation %>
 	</div>
+  <div class="field">
+	  <%= f.label :slogan %>
+	  <%= f.text_area :slogan %>
+	</div>
 	<div class="field">
 	  <%= f.label :body %>
 	  <%= f.text_area :body %>
-	</div>
-	<div class="field">
-		<%= f.hidden_field :banner, value: @political_party.cached_banner_data %>
-	</div>
-	<div class="field">
-		<%= f.label :banner %>
-		<%= f.file_field :banner %>
 	</div>
 	<div class="field">
 		<%= f.hidden_field :logo, value: @political_party.cached_logo_data %>

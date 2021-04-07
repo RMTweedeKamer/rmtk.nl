@@ -7,68 +7,60 @@ import {
   Heading,
   Text,
   Stack,
+  SimpleGrid,
+  Divider,
   Image,
   ChakraProvider
 } from '@chakra-ui/react';
 
-type AppProps = { logo: string, name: string, abbreviation: string, body: string };
+import { DownloadIcon } from '@chakra-ui/icons'
 
-const ProductSimple = ({ logo, name, abbreviation, body }: AppProps) => {
+type AppProps = {
+  logo_url: string,
+  name: string,
+  abbreviation: string,
+  slogan: string,
+  body: string,
+  election_programme_url: string
+};
+
+const ProductSimple = ({ logo_url, name, abbreviation, slogan, body, election_programme_url }: AppProps) => {
   return (
     <ChakraProvider>
       <Center py={12}>
-        <Box
-          role={'group'}
-          p={6}
-          maxW={'330px'}
-          w={'full'}
-          bg={useColorModeValue('white', 'gray.800')}
-          boxShadow={'2xl'}
-          rounded={'lg'}
-          pos={'relative'}
-          zIndex={1}>
-          <Box
-            rounded={'lg'}
-            mt={-12}
-            pos={'relative'}
-            height={'230px'}
-            _after={{
-              transition: 'all .3s ease',
-              content: '""',
-              w: 'full',
-              h: 'full',
-              pos: 'absolute',
-              top: 5,
-              left: 0,
-              backgroundImage: `url(${logo})`,
-              filter: 'blur(15px)',
-              zIndex: -1,
-            }}
-            _groupHover={{
-              _after: {
-                filter: 'blur(20px)',
-              },
-            }}>
-            <Image
-              rounded={'lg'}
-              height={230}
-              width={282}
-              objectFit={'cover'}
-              src={logo}
-            />
-          </Box>
-          <Stack pt={10} align={'center'}>
-            <Text color={'gray.500'} fontSize={'m'} fontWeight={800}>
-              {abbreviation}
-            </Text>
-            <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500}>
-              {name}
-            </Heading>
-            <Text fontSize={'xl'}>
-              {body}
-            </Text>
-          </Stack>
-        </Box>
+        <Stack spacing={10}>
+          <Center>
+            <Heading size={'2xl'}>{name}</Heading>
+          </Center>
+
+          <SimpleGrid columns={[1, 2]} spacing={10}>
+            <Box boxShadow={'2xl'} zIndex={1}>
+              <Image
+                borderRadius="2%"
+                maxW={'330px'}
+                src={logo_url}
+                alt="logo"
+              />
+            </Box>
+            <Box maxW={'330px'}>
+              <Heading>{abbreviation}</Heading>
+              <Text color={"gray.500"}>{slogan}</Text>
+              <Divider my={5} orientation="horizontal" />
+              <Text>{body}</Text>
+            </Box>
+          </SimpleGrid>
+          {election_programme_url
+            ?
+            <Stack>
+              <Divider my={5} orientation="horizontal" />
+              <Text fontSize="lg" color={"gray.900"} as={'a'} href={election_programme_url} >
+                <strong>Verkiezingsprogramma </strong><DownloadIcon color="Gray.900" />
+              </Text>
+            </Stack>
+            :
+            <h1></h1>
+          }
+        </Stack>
       </Center>
     </ChakraProvider>
   );

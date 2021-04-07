@@ -6,7 +6,7 @@ class PoliticalPartiesController < ApplicationController
 
   # GET /political_parties or /political_parties.json
   def index
-    @political_parties = PoliticalParty.only(:id, :name, :abbreviation, :body, :logo_data, :active).all
+    @political_parties = PoliticalParty.only(:id, :name, :abbreviation, :slogan, :logo_data, :active).all
   end
 
   # GET /political_parties/1 or /political_parties/1.json
@@ -67,6 +67,6 @@ class PoliticalPartiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def political_party_params
-      params.require(:political_party).permit(:name, :abbreviation, :body, :banner, :logo, :election_programme)
+      params.require(:political_party).permit(:name, :abbreviation, :body, :logo, :election_programme)
     end
 end

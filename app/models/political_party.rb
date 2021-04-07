@@ -4,10 +4,8 @@ class PoliticalParty
 
   field :name, type: String
   field :abbreviation, type: String
+  field :slogan, type: String
   field :body, type: String
-
-  include ImageUploader::Attachment(:banner)
-  field :banner_data, type: String
 
   include ImageUploader::Attachment(:logo)
   field :logo_data, type: String

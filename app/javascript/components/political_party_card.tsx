@@ -10,9 +10,9 @@ import {
   Image
 } from '@chakra-ui/react';
 
-type AppProps = { logo?: string, name?: string, abbreviation?: string, body?: string, id?: string };
+type AppProps = { logo?: string, name?: string, abbreviation?: string, slogan?: string, id?: string };
 
-const ProductSimple = ({ logo, name, abbreviation, body, id }: AppProps) => {
+const ProductSimple = ({ logo, name, abbreviation, slogan, id }: AppProps) => {
   return (
     <Center py={12}>
       <Box
@@ -59,11 +59,11 @@ const ProductSimple = ({ logo, name, abbreviation, body, id }: AppProps) => {
           <Text color={'gray.500'} fontSize={'m'} fontWeight={800}>
             {abbreviation}
           </Text>
-          <Heading as={'a'} href={"political_parties/" + id} fontSize={'2xl'} fontFamily={'body'} fontWeight={500}>
+          <Heading as={'a'} href={"political_parties/" + id} fontSize={'2xl'} fontFamily={'body'} fontWeight={600}>
             {name}
           </Heading>
-          <Text fontSize={'xl'}>
-            {body}
+          <Text fontSize={'lg'}>
+            {slogan}
           </Text>
         </Stack>
       </Box>

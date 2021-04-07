@@ -1,43 +1,15 @@
 <% content_for :title, @political_party&.name %>
 
-<p id="notice"></p>
+<%= react_component("political_party", {
+  logo_url: @political_party&.logo&.url,
+  name: @political_party&.name,
+  abbreviation: @political_party&.abbreviation,
+  slogan: @political_party&.slogan,
+  body: @political_party&.body,
+  election_programme_url: @political_party&.election_programme&.url}) %>
 
-<p>
-  <strong>Name:</strong><%= @political_party.name %>
-</p>
-
-<p>
-  <strong>Abbreviation:</strong><%= @political_party.abbreviation %>
-</p>
-
-<p>
-  <strong>Body:</strong><%= @political_party.body %>
-</p>
-
-<p>
-  <strong>Banner:</strong>
-  <%= image_tag @political_party&.banner.url unless @political_party&.banner.blank? %>
-</p>
-
-<p>
-  <strong>Logo:</strong>
-  <%= image_tag @political_party&.logo.url unless @political_party&.logo.blank? %>
-</p>
-
-<p>
-  <strong>Party token:</strong><%= @political_party.party_token %>
-</p>
-
-<p>
-  <strong>Active:</strong><%= @political_party.active %>
-</p>
-
-<p>
-  <strong>Election programme:</strong><a href="<%= @political_party&.election_programme.url unless @political_party&.election_programme.blank? %>" > <%= @political_party&.election_programme&.original_filename %> </a>
-</p>
-
-<%= react_component("political_party", { logo: @political_party&.logo&.url, name: @political_party&.name, abbreviation: @political_party&.abbreviation, body: @political_party&.body }) %>
-
-<%= link_to 'Edit', edit_political_party_path(@political_party) %>
- |
-<%= link_to 'Back', political_parties_path %>
+<% if can? :manage, @political_party %>
+  <%= link_to 'Edit', edit_political_party_path(@political_party) %>
+  |
+  <%= link_to 'Back', political_parties_path %>
+<% end %>

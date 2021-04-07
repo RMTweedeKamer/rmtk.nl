@@ -147,11 +147,7 @@ export default function StatsGridWithImage() {
             title={'RMTK Stemwijzer'}
             link={''}
             text={'TBA'} />
-
         </SimpleGrid>
-      </Box>
-      <Box bg="" h="20vh" p={4} color="white">
-
       </Box>
       </Container></>
   );
