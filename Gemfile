@@ -55,3 +55,5 @@ gem 'rails_admin', '~> 2.1.1'
 gem 'kaminari-mongoid'
 gem 'cancancan'
 gem 'cancancan-mongoid'
+
+gem "mina"
