@@ -29,8 +29,9 @@ group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'rack-mini-profiler', '~> 2.3.1'
-  gem 'listen', '>= 3.0.5', '< 3.2'
 end
+gem 'listen', '>= 3.0.5', '< 3.2'
+
 
 group :test do
   gem 'capybara', '>= 3.35'
@@ -55,3 +56,5 @@ gem 'rails_admin', '~> 2.1.1'
 gem 'kaminari-mongoid'
 gem 'cancancan'
 gem 'cancancan-mongoid'
+
+gem "mina"
