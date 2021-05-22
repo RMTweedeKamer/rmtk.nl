@@ -58,3 +58,4 @@ gem 'cancancan'
 gem 'cancancan-mongoid'
 
 gem "mina"
+gem "sd_notify"
