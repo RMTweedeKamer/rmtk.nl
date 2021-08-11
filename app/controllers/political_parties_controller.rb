@@ -67,6 +67,6 @@ class PoliticalPartiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def political_party_params
-      params.require(:political_party).permit(:name, :abbreviation, :body, :logo, :election_programme)
+      params.require(:political_party).permit(:name, :abbreviation, :body, :logo, :slogan, :election_programme)
     end
 end

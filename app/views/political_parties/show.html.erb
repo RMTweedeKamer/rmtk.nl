@@ -8,7 +8,7 @@
   body: @political_party&.body,
   election_programme_url: @political_party&.election_programme&.url}) %>
 
-<% if can? :manage, @political_party %>
+<% if can? :update, @political_party %>
   <%= link_to 'Edit', edit_political_party_path(@political_party) %>
   |
   <%= link_to 'Back', political_parties_path %>
