@@ -15,15 +15,13 @@ import { FaInstagram, FaTwitter, FaReddit } from 'react-icons/fa';
 import { ReactNode } from 'react';
 import React from 'react';
 
-var logo = require('../images/logo.jpg');
-
 const Logo = (props: any) => {
     return (
       <Image
   borderRadius="full"
   w={10}
   h={10}
-  src={ logo }
+  src={ '/images/logo.jpg' }
   alt="RMTK logo"
 />
 

@@ -1,3 +1,4 @@
 <% content_for :title, "Politieke Partijen" %>
 
-<%= react_component("political_parties", { data: @political_parties }) %>
+<div id="react-data-political_parties" data-political_parties='<%= @political_parties.to_json.html_safe %>' ></div>
+<%= vite_typescript_tag 'political_parties_index.tsx' %>

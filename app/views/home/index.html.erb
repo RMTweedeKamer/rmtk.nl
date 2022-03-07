@@ -1,1 +1,2 @@
-<%= react_component("home", prerender: true) %>
+<div id="react-data-home" data-home=<%= {isLoggedIn: logged_in?, id: current_user&.id&.to_str, username: current_user&.username }.to_json.html_safe %>></div>
+<%= vite_typescript_tag 'home.tsx' %>
